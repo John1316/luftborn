@@ -1,50 +1,59 @@
-# React + TypeScript + Vite
+# Project Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A brief description of your project, explaining what it does or its purpose.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Installation](#installation)
+- [Running the Project](#running-the-project)
+- [Building the Project](#building-the-project)
+- [Starting the Built Project](#starting-the-built-project)
+- [Project Structure](#project-structure)
+- [Technologies Used](#technologies-used)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+### Prerequisites
+Ensure you have the following installed on your machine:
+- [Node.js](https://nodejs.org/en/) (v14.x or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Steps to Install
+1. **Clone the repository**:
+   ```
+   git clone https://github.com/John1316/luftborn 
+   
+Navigate to the project directory:
 
-- Configure the top-level `parserOptions` property like this:
+### Steps to Change directory:
+2. **Change the repository**:
+```   
+cd luftborn
+```
+Install dependencies: If using npm:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Steps to install
+3. **Install the dependencies**:
+```
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## Steps to Run 
+4. **Run Local**:
 ```
+npm  run dev
+```
+### Steps to Run Build 
+5. **Run Build**:
+```
+npm  run build
+```
+
+### Steps to Run project with .env 
+6. **VITE_URL_API**:
+```
+VITE_API_URL=https://fakestoreapi.com
+```
+## Table of uses technologies
+- [React](https://react.dev) - A JavaScript library for building user interfaces
+- [TypeScript]() (if applicable) - Strongly typed programming language that builds on JavaScript
+- [CSS/SCSS-Modules](https://en.bem.info/methodology) - Styling approach for scoped styles - BEM strategy
