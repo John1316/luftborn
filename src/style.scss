@@ -1,0 +1,113 @@
+// SalesDashboard.scss
+@import "./styles/grid.scss";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+body{
+    background-color: #1a1b26;
+}
+.sales-dashboard {
+    display: flex;
+    color: #ffffff;
+    padding: 0;
+    min-height: 100vh;
+    &__container{
+        margin: 0 112px;
+    }
+    &__sidebar {
+        width: 200px;
+        margin-right: 20px;
+    }
+
+    &__profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    &__profile-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    &__profile-name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &__period-selector {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__period {
+        padding: 10px;
+        cursor: pointer;
+
+        &--active {
+            background-color: #3d3e50;
+            border-radius: 5px;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+    }
+
+    &__card {
+        background-color: #2a2b3d;
+        border-radius: 10px;
+        padding: 15px;
+    }
+
+    &__card-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    &__card-category {
+        font-family: Rubik;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 21.33px;
+        text-align: left;
+
+        color: #FFFFFF;
+    }
+
+    &__card-more {
+        cursor: pointer;
+        color: #D8D8D8;
+    }
+    &__card{
+        &-description{
+            font-family: Rubik;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14.22px;
+            text-align: left;
+        }
+        &-amount{
+            font-family: Rubik;
+            font-size: 39px;
+            font-weight: 300;
+            line-height: 46.22px;
+            text-align: start;
+            color: #fff;
+        }
+        &-availability{
+            font-family: Rubik;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 14.22px;
+            text-align: start;
+
+        }
+    }
+    &__card {
+    }
+}
