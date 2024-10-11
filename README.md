@@ -60,4 +60,4 @@ VITE_API_URL=https://fakestoreapi.com
 - [React](https://react.dev) - A JavaScript library for building user interfaces
 - [TypeScript]() (if applicable) - Strongly typed programming language that builds on JavaScript
 - [CSS/SCSS-Modules](https://en.bem.info/methodology) - Styling approach for scoped styles - BEM strategy
-- [Axios](https://www.axios.com) - For Https calls
+- [Axios](https://axios-http.com/docs/intro) - For Https calls
