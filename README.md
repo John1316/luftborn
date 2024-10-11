@@ -6,8 +6,6 @@ A brief description of your project, explaining what it does or its purpose.
 - [Installation](#installation)
 - [Running the Project](#running-the-project)
 - [Building the Project](#building-the-project)
-- [Starting the Built Project](#starting-the-built-project)
-- [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
 
 ## Installation
@@ -17,6 +15,7 @@ Ensure you have the following installed on your machine:
 - [Node.js](https://nodejs.org/en/) (v14.x or higher)
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
+## running-the-project
 ### Steps to Install
 1. **Clone the repository**:
    ```
@@ -42,6 +41,8 @@ npm install
 ```
 npm  run dev
 ```
+
+## building-the-project
 ### Steps to Run Build 
 5. **Run Build**:
 ```
@@ -53,7 +54,10 @@ npm  run build
 ```
 VITE_API_URL=https://fakestoreapi.com
 ```
+
+## technologies-used
 ## Table of uses technologies
 - [React](https://react.dev) - A JavaScript library for building user interfaces
 - [TypeScript]() (if applicable) - Strongly typed programming language that builds on JavaScript
 - [CSS/SCSS-Modules](https://en.bem.info/methodology) - Styling approach for scoped styles - BEM strategy
+- [Axios](https://axios-http.com/docs/intro) - For Https calls
