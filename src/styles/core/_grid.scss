@@ -1,0 +1,240 @@
+// // _grid.scss
+
+// $grid-columns: 12;
+// $breakpoints: (
+//   'sm': 640px,
+//   'md': 768px,
+//   'lg': 1024px,
+//   'xl': 1280px,
+//   '2xl': 1536px
+// );
+
+// .container {
+//   width: 100%;
+//   max-width: 100%; // Ensure container never exceeds viewport width
+//   margin-right: auto;
+//   margin-left: auto;
+//   box-sizing: border-box; // Include padding in width calculation
+
+//   @each $breakpoint, $value in $breakpoints {
+//     @media (min-width: $value) {
+//       max-width: $value;
+//     }
+//   }
+// }
+
+// .grid {
+//   display: grid;
+//   grid-template-columns: repeat(1, minmax(0, 1fr)); // Default to 1 column for mobile
+
+//   @each $breakpoint, $value in $breakpoints {
+//     @media (min-width: $value) {
+//       grid-template-columns: repeat($grid-columns, minmax(0, 1fr));
+//     }
+//   }
+// }
+
+// // Default column spans for mobile (1 column)
+// @for $i from 1 through $grid-columns {
+//   .col-#{$i} {
+//     grid-column: span 1 / span 1;
+//   }
+// }
+// @for $i from 1 through $grid-columns {
+//   .grid-cols-#{$i} {
+//     grid-template-columns: repeat($i, minmax(0, 1fr));
+//   }
+// }
+// // Responsive column spans
+// @each $breakpoint, $value in $breakpoints {
+//   @media (min-width: $value) {
+//     @for $i from 1 through $grid-columns {
+//       .col-#{$breakpoint}-#{$i} {
+//         grid-column: span $i / span $i;
+//       }
+//     }
+//   }
+// }
+
+// // Gap utilities
+// $gap-sizes: (
+//   '0': 0,
+//   '1': 0.25rem,
+//   '2': 0.5rem,
+//   '3': 0.75rem,
+//   '4': 1rem,
+//   '5': 1.25rem,
+//   '6': 1.5rem,
+//   '8': 2rem,
+//   '10': 2.5rem,
+//   '12': 3rem,
+// );
+
+// @each $size, $value in $gap-sizes {
+//   .gap-#{$size} {
+//     gap: $value;
+//   }
+// }
+
+// // Responsive gap utilities
+// @each $breakpoint, $screen-size in $breakpoints {
+//   @media (min-width: $screen-size) {
+//     @each $size, $value in $gap-sizes {
+//       .gap-#{$breakpoint}-#{$size} {
+//         gap: $value;
+//       }
+//     }
+//   }
+// }
+
+// // Alignment utilities with responsive classes
+// $alignments: (
+//   'center': center,
+//   'start': flex-start,
+//   'end': flex-end
+// );
+
+// @each $name, $value in $alignments {
+//   .items-#{$name} {
+//     align-items: $value;
+//   }
+  
+//   .text-#{$name} {
+//     text-align: $value;
+//   }
+  
+//   @each $breakpoint, $screen-size in $breakpoints {
+//     @media (min-width: $screen-size) {
+//       .items-#{$breakpoint}-#{$name} {
+//         align-items: $value;
+//       }
+      
+//       .text-#{$breakpoint}-#{$name} {
+//         text-align: $value;
+//       }
+//     }
+//   }
+// }
+// _grid.scss
+
+$grid-columns: 12;
+$breakpoints: (
+  'xs': 0,
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  '2xl': 1536px
+);
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @each $breakpoint, $value in $breakpoints {
+    @if $value > 0 {
+      @media (min-width: $value) {
+        max-width: $value;
+      }
+    }
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+// Grid columns utilities for all breakpoints
+@each $breakpoint, $value in $breakpoints {
+  @media (min-width: $value) {
+    @for $i from 1 through $grid-columns {
+      .grid-cols-#{$breakpoint}-#{$i} {
+        grid-template-columns: repeat($i, minmax(0, 1fr));
+      }
+    }
+  }
+}
+
+// Column span utilities for all breakpoints
+@each $breakpoint, $value in $breakpoints {
+  @media (min-width: $value) {
+    @for $i from 1 through $grid-columns {
+      .col-#{$breakpoint}-#{$i} {
+        grid-column: span $i / span $i;
+      }
+    }
+  }
+}
+
+// Gap utilities
+$gap-sizes: (
+  '0': 0,
+  '1': 0.25rem,
+  '2': 0.5rem,
+  '3': 0.75rem,
+  '4': 1rem,
+  '5': 1.25rem,
+  '6': 1.5rem,
+  '8': 2rem,
+  '10': 2.5rem,
+  '12': 3rem,
+);
+
+// Responsive gap utilities for all breakpoints
+@each $breakpoint, $screen-size in $breakpoints {
+  @media (min-width: $screen-size) {
+    @each $size, $value in $gap-sizes {
+      .gap-#{$breakpoint}-#{$size} {
+        gap: $value;
+      }
+    }
+  }
+}
+
+// Alignment utilities
+$alignments: (
+  'center': center,
+  'start': flex-start,
+  'end': flex-end
+);
+
+// Responsive alignment utilities for all breakpoints
+@each $breakpoint, $screen-size in $breakpoints {
+  @media (min-width: $screen-size) {
+    @each $name, $value in $alignments {
+      .items-#{$breakpoint}-#{$name} {
+        align-items: $value;
+      }
+      
+      .text-#{$breakpoint}-#{$name} {
+        text-align: $value;
+      }
+    }
+  }
+}
+
+// Responsive display utilities
+@each $breakpoint, $screen-size in $breakpoints {
+  @media (min-width: $screen-size) {
+    .hidden-#{$breakpoint} {
+      display: none;
+    }
+    .block-#{$breakpoint} {
+      display: block;
+    }
+    .inline-block-#{$breakpoint} {
+      display: inline-block;
+    }
+    .flex-#{$breakpoint} {
+      display: flex;
+    }
+    .grid-#{$breakpoint} {
+      display: grid;
+    }
+  }
+}

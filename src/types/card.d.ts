@@ -9,4 +9,10 @@ type Product = {
     category: string,
     description: string,
     image: string,
+    rating: Rating,
+    color: string
+}
+type Rating = {
+    count: number, 
+    rate: number
 }
